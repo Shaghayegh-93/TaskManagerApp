@@ -5,11 +5,12 @@ const TaskListContext = createContext();
 const TaskListContextDispatcher = createContext();
 const initialState = {
   taskList: [],
+  editTask: { id: null, text: "" },
 };
 const TaskListProvider = ({ children }) => {
-  const [TaskList, dispatch] = useReducer(taskListReducer, initialState);
+  const [taskList, dispatch] = useReducer(taskListReducer, initialState);
   return (
-    <TaskListContext.Provider value={TaskList}>
+    <TaskListContext.Provider value={taskList}>
       <TaskListContextDispatcher.Provider value={dispatch}>
         {children}
       </TaskListContextDispatcher.Provider>
