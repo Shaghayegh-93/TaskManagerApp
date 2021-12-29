@@ -1,10 +1,11 @@
 import TaskForm from "./TaskForm";
 import TaskList from "./TaskList";
 import { useState, useEffect } from "react";
-import { useTaskListAction } from "../context/TaskListProvider";
+import { useTaskListAction, useTaskList } from "../context/TaskListProvider";
 
 const TaskManagerApp = () => {
   const [edit, setEdit] = useState({ id: null, text: "" });
+  const { taskList } = useTaskList();
 
   const [taskText, setTaskText] = useState("");
 
@@ -39,6 +40,14 @@ const TaskManagerApp = () => {
       }
     }
   };
+  useEffect(() => {
+    const savedTaskList = JSON.parse(localStorage.getItem("taskList"));
+    if (savedTaskList)
+      dispatch({ type: "SAVE_TO_LOCAL_STORAGE", payload: savedTaskList });
+  }, []);
+  useEffect(() => {
+    localStorage.setItem("taskList", JSON.stringify(taskList));
+  }, [taskList]);
 
   return (
     <div className="app-wrapper">
