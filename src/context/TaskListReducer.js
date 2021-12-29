@@ -27,6 +27,9 @@ const taskListReducer = (state, action) => {
       });
       return { ...state, taskList: updatedTaskList };
     }
+    case "SAVE_TO_LOCAL_STORAGE": {
+      return { ...state, taskList: action.payload };
+    }
 
     default:
       return state;
