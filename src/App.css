@@ -1,38 +1,150 @@
-.App {
+@import url("https://fonts.googleapis.com/css?family=Josefin+Slab:300,400,600,700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600,700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Capriola&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  background: #aeaeb0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app-wrapper {
+  background-color: #f0f0f1;
+  width: 25%;
+  min-width: 450px;
+  height: 600px;
+  padding: 30px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  max-height: 800px;
+  overflow-y: auto;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+  color: #000;
+  font-weight: bold;
   text-align: center;
+  margin: 50px 20px 60px 20px;
+  font-family: "Capriola";
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.main {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: space-between;
+  margin-bottom: 50px;
+  width: 100%;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  margin-bottom: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.list {
+  width: 90%;
+  margin: auto;
+  max-height: 300px;
+  overflow: hidden;
+  overflow-y: auto;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.task-input {
+  width: 350px;
+  min-width: 250px;
+  padding: 15px 10px 10px 20px;
+
+  margin-right: 10px;
+  font-family: "Capriola";
+  font-size: 15px;
+  color: rgb(78, 76, 76);
+  background-color: #fff;
+  border: 1px solid #e0e3e4;
+  outline: none;
+  border-radius: 10px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.buttons {
+  display: flex;
+  margin-top: 10px;
+}
+
+.btn {
+  margin: 10px;
+}
+
+.add-task-btn {
+  min-width: 100px;
+  background-color: #d6337f;
+  color: #ccc;
+  border: none;
+  font-family: "Capriola";
+  font-size: 14px;
+  border-radius: 20px;
+  box-shadow: 0 3px 5px #f35f89;
+  outline: none;
+  cursor: pointer;
+}
+
+.list-item {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+  border-radius: 10px;
+
+  padding: 10px;
+  background-color: rgba(248, 204, 228, 0.404);
+}
+
+.list-item span {
+  color: #d6337f;
+}
+
+.task-btn {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+.btn-delete,
+.btn-edit {
+  font-size: 16px;
+  color: #d6337f;
+  margin-right: 10px;
+}
+
+.clear-btn {
+  width: 100px;
+  height: 35px;
+  background-color: #d6337f;
+  color: #ccc;
+  border: none;
+  font-family: "Capriola";
+  font-size: 14px;
+  border-radius: 20px;
+  box-shadow: 0 3px 5px #f35f89;
+  outline: none;
+  cursor: pointer;
+}
+
+.no-tasks {
+  color: #777;
+  text-align: center;
+  font-size: 18px;
+  margin-top: 20px;
 }
